@@ -1,28 +1,11 @@
-register_success = {
-  "type": "object",
-  "additionalProperties": False,
-  "properties": {
-    "id": {
-      "type": "integer"
-    },
-    "token": {
-      "type": "string"
-    }
-  },
-  "required": [
-    "id",
-    "token"
-  ]
-}
+from voluptuous import Schema, Required, PREVENT_EXTRA
 
-register_unsuccess = {
-  "type": "object",
-  "properties": {
-    "error": {
-      "type": "string"
-    }
-  },
-  "required": [
-    "error"
-  ]
-}
+
+register_success = Schema({
+    Required("id"): int,
+    Required("token"): str
+}, extra=PREVENT_EXTRA)
+
+register_unsuccess = Schema({
+    Required("error"): str
+}, extra=PREVENT_EXTRA)

@@ -1,0 +1,5 @@
+requests~=2.32.3
+jsonschema~=4.23.0
+pytest~=8.3.5
+voluptuous~=0.15.2
+allure-python-commons~=2.13.5
